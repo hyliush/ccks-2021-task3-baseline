@@ -44,7 +44,7 @@ main file to run on Colab.The main structure is exactly the same as maim.py
 
 - data folder contains files(train.txt,dev.txt,Xeon3NLP_round1_test_20210524.txt). The first two files is processed from Xeon3NLP_round1_train_20210524.txt(use data_process.ipynb) 
 
-- model folder contains files (.bin,.json,.txt) can be downloaded [Chinese-BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm) for chinese text (also support other language).
+- pretrained_model folder contains pretrained model files (.bin,.json,.txt) which can be downloaded [Chinese-BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm) for chinese text (also support other language).
 
 - data_process.pynb
 split Xeon3NLP_round1_train_20210524.txt to train.txt and dev.txt
