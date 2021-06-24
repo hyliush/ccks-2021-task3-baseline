@@ -14,7 +14,7 @@ class PointwiseMatching(BertPreTrainedModel):
         self.bert = BertModel(config)
         self.dropout = nn.Dropout( 0.1)
         self.classifier = nn.Linear(config.hidden_size, self.num_labels)
-        self.init_weights()
+        #self.init_weights()
 
     @torch.no_grad()
     def init_weights(self):
