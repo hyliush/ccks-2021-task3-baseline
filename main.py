@@ -75,10 +75,8 @@ else:
 # prepare model
 tokenizer = BertTokenizer.from_pretrained(args.model_name_or_path, do_lower_case=args.do_lower_case)
 config = BertConfig.from_pretrained(args.model_name_or_path, num_labels=args.num_classification)
-# 文本匹配
-#pretrained_model = BertModel.from_pretrained(args.model_name_or_path,config = config)
-model = PointwiseMatching.from_pretrained(args.model_name_or_path,config = config)
-#model = BertForSequenceClassification.from_pretrained(args.model_name_or_path, config=config)
+# model = PointwiseMatching.from_pretrained(args.model_name_or_path,config = config)
+model = BertForSequenceClassification.from_pretrained(args.model_name_or_path, config=config)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
@@ -103,9 +101,10 @@ train_dataloader = dt.prepare_dataloader(file_path=os.path.join(args.data_dir, t
                                             max_seq_length=args.max_seq_length,
                                             sampler=RandomSampler,
                                             _cache_fp=train_cache_name, _refresh=False)
-if args.save_runs:
-    import numpy as np
-    writer.add_graph(model.to('cpu'),[i[0].unsqueeze(0) if i.shape else i for i in (*next(iter(train_dataloader))[:3],torch.tensor(True))])
+# need to revised for specific model
+# if args.save_runs:
+#     writer.add_graph(model.to('cpu'),[i[0].unsqueeze(0) if i.shape else i for i in (*next(iter(train_dataloader))[:3],torch.tensor(True))])
+
 # prepare scheduler
 if args.warmup_proportion>0:
     n_steps = len(train_dataloader)*args.n_epochs/args.update_every
@@ -187,7 +186,7 @@ if args.do_train:
     generate_submit(predictor,'Xeon3NLP_round1_train_20210524.txt','submit_dev.txt')
     generate_submit(predictor, read_filename='Xeon3NLP_round1_test_20210524.txt',
                     write_filename='submit_addr_match_runid.txt')
-writer.add_graph()
+
 #args.do_test = True
 if args.do_test:
     # prepare predictor
