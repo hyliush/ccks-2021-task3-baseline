@@ -26,6 +26,9 @@ This simple wrapper based on Transformers (for managing BERT model) and PyTorch.
 ## Stucture
 The main module contains the follow files:
 
+- data_process.pynb
+split Xeon3NLP_round1_train_20210524.txt to train.txt and dev.txt
+
 - The dataset.py
 Text process -> read a file and convert it to a format for model (transform file.txt to dataloader).
 
@@ -46,8 +49,6 @@ main file to run on Colab.The main structure is exactly the same as maim.py
 
 - pretrained_model folder contains pretrained model files (.bin,.json,.txt) which can be downloaded [Chinese-BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm) for chinese text (also support other language).
 
-- data_process.pynb
-split Xeon3NLP_round1_train_20210524.txt to train.txt and dev.txt
 
 
 ## Other 
