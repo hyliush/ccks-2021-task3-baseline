@@ -1,4 +1,4 @@
-# Simple Structure for NLP
+# A frame for NLP
 
 provide a simple and commom frame for training and test process in NLP 
 
