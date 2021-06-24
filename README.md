@@ -1,6 +1,19 @@
-# -ccks2021_track3_baseline
+# Simple Structure for NLP
 
-## Simple way to run
+provide a simple and commom frame for training and test process in NLP 
+
+## Highlights
+This simple wrapper based on Transformers (for managing BERT model) and PyTorch. 
+1. support cache.
+
+2. support earlystop. 
+
+3. support tensorboard to record experiment.
+
+4. support other tasks by revising dataloader.py and model.py
+
+
+## Simple way to run for ccks2021 task3
 
 1. prepare bert_pretrained model and revised  '--model_name_or_path'
 
@@ -10,17 +23,7 @@
 
 4. run on local device(main.py) turn debug on False before run main.
 
-
 ## Stucture
-This simple wrapper based on Transformers (for managing BERT model) and PyTorch. 
-1. support cache.
-
-2. support earlystop. 
-
-3. support tensorboard to record experiment.
-
-4. support task only revised dataloader.py and model.py
-
 The main module contains the follow files:
 
 - The dataset.py
@@ -43,10 +46,10 @@ main file to run on Colab.The main structure is exactly the same as maim.py
 
 - model folder contains files (.bin,.json,.txt) can be downloaded [Chinese-BERT-wwm](https://github.com/ymcui/Chinese-BERT-wwm) for chinese text (also support other language).
 
--- data_process.pynb
+- data_process.pynb
 split Xeon3NLP_round1_train_20210524.txt to train.txt and dev.txt
 
 
-### other 
+## Other 
 - 1.one can add some trick to import prediction performance. For example model average,Pseudo label,model stacking. Details can be seen[BDCI top1 scheme](https://github.com/cxy229/BDCI2019-SENTIMENT-CLASSIFICATION).
 - 2.other deep network model can be added in model.py not only Bert class models.
