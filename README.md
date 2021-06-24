@@ -19,9 +19,9 @@ This simple wrapper based on Transformers (for managing BERT model) and PyTorch.
 
 2. prepare dataset and revised  '--data_dir'
 
-3. run on colab (main.ipynb) turn debug on False before run main.
+3. run on colab (main.ipynb). turn debug on False before run main.
 
-4. run on local device(main.py) turn debug on False before run main.
+4. run on local device(main.py). turn debug on False before run main.
 
 ## Stucture
 The main module contains the follow files:
