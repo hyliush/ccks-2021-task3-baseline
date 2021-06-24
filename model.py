@@ -2,8 +2,7 @@ import torch.nn as nn
 from torch.nn import CrossEntropyLoss
 from transformers import BertPreTrainedModel,BertModel
 import torch
-from collections import namedtuple
-model_output=namedtuple('out',['loss','logits'])
+
 class PointwiseMatching(BertPreTrainedModel):
     # 此处的 pretained_model 在本例中会被 ERNIE1.0 预训练模型初始化
     def __init__(self, config):
